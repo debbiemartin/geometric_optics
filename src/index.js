@@ -1,17 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Eye from './images/eye.png';
+import Draggable from 'react-draggable';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+  class Animation extends React.Component {
+    eventLogger = (e: MouseEvent, data: Object) => {
+        console.log('Event: ', e);
+        console.log('Data: ', data);
+      };
+
+    render() {
+      return (
+        <div class="parent">
+          <iframe class="image1"
+            title="myFrame"
+            src="https://phet.colorado.edu/sims/html/geometric-optics/latest/geometric-optics_en.html"
+            width="800"
+            height="600"
+            allowfullscreen>
+          </iframe>
+          <Draggable>
+            <img class="image2"
+                alt=""
+                src={Eye}>
+            </img>
+          </Draggable>
+        </div>
+      );
+    }
+  }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Animation />);
