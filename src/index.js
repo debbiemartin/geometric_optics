@@ -24,6 +24,7 @@ import Draggable from 'react-draggable';
           </iframe>
           <Draggable>
             <img class="image2"
+                style={{opacity: 0.7, width:"150px"}}
                 alt=""
                 src={Eye}>
             </img>
